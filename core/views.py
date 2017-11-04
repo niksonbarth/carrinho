@@ -2,9 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    texts = ['lorem ipsum', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XV']
-    context = {
-        'title': 'Django E-commerce',
-        'texts': texts
-    }
-    return render(request, 'index.html', context)
+    return render(request, 'index.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def product(request):
+    return render(request, 'product.html')
+
+def product_list(request):
+    return render(request, 'product_list.html')
