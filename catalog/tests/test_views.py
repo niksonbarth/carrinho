@@ -1,8 +1,12 @@
+# coding=utf-8
+
 from django.test import TestCase, Client
 from django.core.urlresolvers import reverse
+
 from model_mommy import mommy
 
 from catalog.models import Product, Category
+
 
 class ProductListTestCase(TestCase):
 
