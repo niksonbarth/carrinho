@@ -1,4 +1,5 @@
 from django.contrib.auth.backends import ModelBackend as BaseModelBackend
+from django.core.exceptions import ObjectDoesNotExist
 
 from .models import User
 
@@ -10,5 +11,5 @@ class ModelBackend(BaseModelBackend):
                 user = User.objects.get(email=username)
                 if user.check_password(password):
                     return user
-            except User.DoesNotExists:
+            except ObjectDoesNotExist:
                 pass
